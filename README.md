@@ -14,3 +14,6 @@ Documentation needed for project
 
 ##database
 Files needed for database functionalities
+
+##possible results site..
+Just copy it into original design folder
