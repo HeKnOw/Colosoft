@@ -122,8 +122,9 @@ if(isset($_POST['action']))
 								<!-- Header top right content search box -->
 								<div class=" header-search">
 									<form class="form" role="form">
-										<div class="input-group">
-										  <input type="text" class="form-control" placeholder="Search...">
+										<div class="input-group">											
+											<!-- TYPEAHEAD SEARCH BAR -->
+										  <input type="text" name="typeahead" autocomplete="off" spellcheck="false" class="form-control" placeholder="Search...">
 										  <span class="input-group-btn">
 											<button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
 										  </span>
@@ -904,6 +905,8 @@ if(isset($_POST['action']))
 		
 		
 		<!-- Javascript files -->
+		<!-- Typeahead JS -->
+		<script src="js/typeahead.min.js"></script>
 		<!-- jQuery -->
 		<script src="js/jquery.js"></script>
 		<!-- Bootstrap JS -->
@@ -922,6 +925,15 @@ if(isset($_POST['action']))
 		<!-- Custom JS -->
 		<script src="js/custom.js"></script>
 		<!-- JS code for this page -->
+		<script>
+			$(document).ready(function(){
+				$('input.typeahead').typeahead({
+					name: 'typeahead',
+					remote:'search.php?key=%QUERY',
+					limit : 10
+				});
+			});
+		</script>
 		<script>
 		/* ******************************************** */
 		/*  JS for SLIDER REVOLUTION  */
