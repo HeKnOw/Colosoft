@@ -32,7 +32,17 @@ while($row = mysql_fetch_array($restaurantInfo))
     $rowsN[$i] = $row["NAME"];
     $i++;
 }
+$restaurants=mysql_query("SELECT NAME, WEBSITE FROM restaurants")or die(mysql_error());
+$i=0;
+while($row = mysql_fetch_array($restaurants))
+{
+    $restaurantW[$i] = $row["WEBSITE"];
+    $restaurantN[$i] = $row["NAME"];
+    $i++;
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -106,6 +116,27 @@ while($row = mysql_fetch_array($restaurantInfo))
 								</div>
 							</div>
 					</div>
+                        <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Restaurants
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <?php 
+
+
+$z=0;
+while($z<30)
+{
+    echo '<li><a href="'.$restaurantW[$z].'">'.$restaurantN[$z].'</a></li>';
+    $z++;
+}
+
+                                           
+     ?>
+  
+  </ul>
+</div>
 					<div class="row">
 						<div class="col-md-4 col-sm-5">
 							<!-- Link -->
@@ -148,7 +179,7 @@ while($row = mysql_fetch_array($restaurantInfo))
 									<!-- Collect the nav links, forms, and other content for toggling -->
 									<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 										<ul class="nav navbar-nav">
-                                            <h1>Favorite Restaurant</h1>
+                                            <h1>Favorite Restaurants</h1>
                                             <?php
                                                 if($rowsN[0] != "")
                                                 {
@@ -677,6 +708,8 @@ while($row = mysql_fetch_array($restaurantInfo))
 		<!-- Custom JS -->
 		<script src="js/custom.js"></script>
 		<!-- JS code for this page -->
+        <!-- Typeahead JS -->
+		<script src="js/typeahead.min.js"></script>
 		<script>
 		/* ******************************************** */
 		/*  JS for SLIDER REVOLUTION  */

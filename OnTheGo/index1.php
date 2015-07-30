@@ -52,7 +52,8 @@ if(isset($_POST['action']))
             else
             {
                mysql_query("Insert into users (username, password) values ('$username', '$password')"); 
-               echo "New user";
+               $_SESSION['username'] = $username;
+                header("location:profile.php");
             }
             
             
@@ -164,9 +165,9 @@ if(isset($_POST['action']))
 									<!-- Collect the nav links, forms, and other content for toggling -->
 									<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 										<ul class="nav navbar-nav">
-											<li><a href="index.html"><img src="img/nav-menu/nav1.jpg" class="img-responsive" alt="" /> Breakfast</a></li>
-                                            <li><a href="index.html"><img src="img/nav-menu/nav2.jpg" class="img-responsive" alt="" /> Lunch</a></li>
-                                            <li><a href="index.html"><img src="img/nav-menu/nav3.jpg" class="img-responsive" alt="" /> Dinner</a></li>
+											<li><a href="index1.php"><img src="img/nav-menu/nav1.jpg" class="img-responsive" alt="" /> Breakfast</a></li>
+                                            <li><a href="index1.php"><img src="img/nav-menu/nav2.jpg" class="img-responsive" alt="" /> Lunch</a></li>
+                                            <li><a href="index1.php"><img src="img/nav-menu/nav3.jpg" class="img-responsive" alt="" /> Dinner</a></li>
 											<li class="dropdown hidden-xs">
 												<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/nav-menu/nav4.jpg" class="img-responsive" alt="" /> American<b class="caret"></b></a>
 												<ul class="dropdown-menu dropdown-md">
@@ -195,7 +196,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 																
 																	<!-- Button -->
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 															<div class="col-md-4">
@@ -208,7 +209,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 																	
 																	<!-- Button -->
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 														</div>
@@ -218,9 +219,9 @@ if(isset($_POST['action']))
 											<li class="dropdown visible-xs">
 												<a href="#" class="dropdown-toggle" data-toggle="dropdown"> American <b class="caret"></b></a>
 												<ul class="dropdown-menu">
-													<li><a href="index.html">Burgers</a></li>
-													<li><a href="index.html">Steaks</a></li>
-													<li><a href="index.html">Wings</a></li>
+													<li><a href="index1.php">Burgers</a></li>
+													<li><a href="index1.php">Steaks</a></li>
+													<li><a href="index1.php">Wings</a></li>
 												</ul>
 											</li>
 											
@@ -239,7 +240,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 																	
 																	<!-- Button -->
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 															<div class="col-md-4 col-sm-6">
@@ -252,7 +253,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 																	
 																	<!-- Button -->
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 															<div class="col-md-4">
@@ -265,7 +266,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 																	
 																	<!-- Button -->
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 														</div>
@@ -275,9 +276,9 @@ if(isset($_POST['action']))
 											<li class="dropdown visible-xs">
 												<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Italian <b class="caret"></b></a>
 												<ul class="dropdown-menu">
-													<li><a href="index.html">Pizza</a></li>
-													<li><a href="index.html">Spaghetti</a></li>
-													<li><a href="index.html">Pasta</a></li>
+													<li><a href="index1.php">Pizza</a></li>
+													<li><a href="index1.php">Spaghetti</a></li>
+													<li><a href="index1.php">Pasta</a></li>
 												</ul>
 											</li>
 																						<li class="dropdown hidden-xs">
@@ -295,7 +296,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 																	
 																	<!-- Button -->
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 															<div class="col-md-4 col-sm-6">
@@ -308,7 +309,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 																	
 																	<!-- Button -->
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 															<div class="col-md-4">
@@ -321,7 +322,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 																	
 																	<!-- Button -->
-																	<a href="menu.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 														</div>
@@ -331,9 +332,9 @@ if(isset($_POST['action']))
 											<li class="dropdown visible-xs">
 												<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Asian <b class="caret"></b></a>
 												<ul class="dropdown-menu">
-													<li><a href="index.html">Sushi</a></li>
-													<li><a href="index.html">Pho Soup</a></li>
-													<li><a href="index.html">Kung-Pao</a></li>
+													<li><a href="index1.php">Sushi</a></li>
+													<li><a href="index1.php">Pho Soup</a></li>
+													<li><a href="index1.php">Kung-Pao</a></li>
 												</ul>
 											</li>
 																																	<li class="dropdown hidden-xs">
@@ -351,7 +352,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 																	
 																	<!-- Button -->
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 															<div class="col-md-4 col-sm-6">
@@ -363,7 +364,7 @@ if(isset($_POST['action']))
 																	<img src="img/dish/dish11.jpg" class="img-responsive" alt="" />
 																	<!-- Paragraph -->
 																	
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 															<div class="col-md-4">
@@ -376,7 +377,7 @@ if(isset($_POST['action']))
 																	<!-- Paragraph -->
 															
 																	<!-- Button -->
-																	<a href="index.html" class="btn btn-danger btn-xs">Search Restaurants</a>
+																	<a href="index1.php" class="btn btn-danger btn-xs">Search Restaurants</a>
 																</div>
 															</div>
 														</div>
@@ -386,9 +387,9 @@ if(isset($_POST['action']))
 											<li class="dropdown visible-xs">
 												<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Others <b class="caret"></b></a>
 												<ul class="dropdown-menu">
-													<li><a href="index.html">Middle-East</a></li>
-													<li><a href="index.html">Mediterranean</a></li>
-													<li><a href="index.html">Greek</a></li>
+													<li><a href="index1.php">Middle-East</a></li>
+													<li><a href="index1.php">Mediterranean</a></li>
+													<li><a href="index1.php">Greek</a></li>
 												</ul>
 											</li>
                                             																			
@@ -905,8 +906,7 @@ if(isset($_POST['action']))
 		
 		
 		<!-- Javascript files -->
-		<!-- Typeahead JS -->
-		<script src="js/typeahead.min.js"></script>
+		
 		<!-- jQuery -->
 		<script src="js/jquery.js"></script>
 		<!-- Bootstrap JS -->
@@ -925,6 +925,8 @@ if(isset($_POST['action']))
 		<!-- Custom JS -->
 		<script src="js/custom.js"></script>
 		<!-- JS code for this page -->
+        <!-- Typeahead JS -->
+		<script src="js/typeahead.min.js"></script>
 		<script>
 			$(document).ready(function(){
 				$('input.typeahead').typeahead({
